@@ -1,6 +1,6 @@
 <h1 align="center">Desafio</h1>
 
-<p align="center">Microservice to register a user and recommend songs based on hometown.</p>
+<p align="center">Api to register a user and recommend songs based on hometown.</p>
 
 <h4 align="center"> 
 	🚧  Desafio 🚀 Finalizado...  🚧
