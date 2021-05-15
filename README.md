@@ -47,11 +47,11 @@ $ git clone <https://github.com/igorcsaraiva/Desafio.git>
 # Crie uma conta no SendGrid no link [SendGrid](https://sendgrid.com/) la será fornecido uma Key você usara essas informação para preencher no 
 # appsettings.json na parte onde se encontra o objeto SendGrid
 
-# Acesse a pasta do projeto no terminal/cmd
-# \Desafio.API e execute o comando: dotnet publish -c Release
+# Acesse a pasta Desafio.API do projeto no terminal/cmd
+# execute o comando: dotnet publish -c Release
 
-# Vá para a pasta server
-# \Desafio e execute o comando: docker-compose -f docker-compose.yml up
+# Vá para a pasta Desafio
+# execute o comando: docker-compose -f docker-compose.yml up
 
 # A Api inciará na porta:80 - acesse <http://localhost:56504>
 
