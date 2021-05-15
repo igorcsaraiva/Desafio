@@ -7,9 +7,11 @@ services:
       dockerfile: Dockerfile
     image: desafio.api
     container_name: prod.desafio.api
+    networks:
+      app_net:
     environment:
-        - DBSTRING=Data Source=172.20.0.2,1433;Initial Catalog=Desafio;Integrated Security=False;User ID=sa;Password=Teasure123*
-        - DBSTRINGHISTORY=Data Source=172.20.0.2,1433;Initial Catalog=DesafioHistory;Integrated Security=False;User ID=sa;Password=Teasure123*
+        - DBSTRING=Data Source=172.16.238.10,1433;Initial Catalog=Desafio;Integrated Security=False;User ID=sa;Password=Teasure123*
+        - DBSTRINGHISTORY=Data Source=172.16.238.10,1433;Initial Catalog=DesafioHistory;Integrated Security=False;User ID=sa;Password=Teasure123*
     ports:
           - 56504:80
     depends_on:
@@ -17,6 +19,10 @@ services:
    sql:
     image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: sql
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.10
+        ipv6_address: 2001:3984:3989::10
     ports:
       - 1433:1433
     volumes:
@@ -27,3 +33,15 @@ services:
       - BIND-ADRESS=0.0.0.0
 volumes:
    sqlserver:
+
+networks:
+  app_net:
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+          gateway: 172.16.238.1
+        - subnet: 2001:3984:3989::/64
+          gateway: 2001:3984:3989::1
