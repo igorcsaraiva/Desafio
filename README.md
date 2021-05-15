@@ -11,6 +11,27 @@
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Docker](https://docs.docker.com/docker-for-windows/install/) se for Windows, [.Net Core 5](https://dotnet.microsoft.com/download).
 
+### Descrição do desafio.
+
+Business Rules
+The API has to register these user's fields:
+name;
+email;
+password;
+personal notes (multiples);
+hometown.
+Personal notes and password shouldn't be visible on database.
+Auth route should work with JWT method.
+The API has to provide a reset and forgot password mechanism.
+Log all requests for future auditory.
+Based on hometown and its current temperature, you have to recommend a playlist as
+follow:
+if temperature (celcius) is above 30 degrees, suggests tracks for party;
+in case temperature is between 15 and 30 degrees, suggests pop music tracks;
+if it's a bit chilly (between 10 and 14 degrees), suggests rock music tracks.
+otherwise, if it's freezing outside, suggests classical music tracks.
+Readme has to contain all instructions to run your project.
+
 ### 🎲 Rodando o projeto no container 
 
 ```bash
