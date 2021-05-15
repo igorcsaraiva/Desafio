@@ -9,7 +9,7 @@
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Docker](https://docs.docker.com/docker-for-windows/install/) se for Windows.
+[Docker](https://docs.docker.com/docker-for-windows/install/) se for Windows, [.Net Core 5](https://dotnet.microsoft.com/download).
 
 ### 🎲 Rodando o projeto no container 
 
