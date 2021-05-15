@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+   app:
+    build:
+      context: Desafio.Api
+      dockerfile: Dockerfile
+    image: desafio.api
+    container_name: prod.desafio.api
+    environment:
+        - DBSTRING=Data Source=172.20.0.2,1433;Initial Catalog=Desafio;Integrated Security=False;User ID=sa;Password=Teasure123*
+        - DBSTRINGHISTORY=Data Source=172.20.0.2,1433;Initial Catalog=DesafioHistory;Integrated Security=False;User ID=sa;Password=Teasure123*
+    ports:
+          - 56504:80
+    depends_on:
+          - sql
+   sql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlserver:/mcr.microsoft.com/mssql/server 
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Teasure123*
+      - BIND-ADRESS=0.0.0.0
+volumes:
+   sqlserver:

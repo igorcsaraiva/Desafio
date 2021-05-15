@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset password</title>
+</head>
+<body>
+    <form action="/api/Acount/ResetPassword" method="post" type="application/json">
+        <input id="token" type="hidden" value=@ViewBag.Token />
+        <input id="email" type="hidden" value="@ViewBag.Email" />
+        <table>
+            <tr>
+                <td>
+                    <label>Password</label>
+                </td>
+                <td>
+                    <input id="password" type="password" />
+                </td>
+            <tr>
+            <tr>
+                <td>
+                    <label>Confirm password</label>
+                </td>
+                <td>
+                    <input id="confirmPassword" type="password" />
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Submit" onclick="submitForm()" />
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    function submitForm() {
+
+        let resetAcountRequest = {
+            Email: document.getElementById("email").value,
+            Token: document.getElementById("token").value,
+            Password: document.getElementById("password").value,
+            ConfirmPassword: document.getElementById("confirmPassword").value,
+        }
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', @ViewBag.AppUrlReset, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+
+        xhr.onreadystatechange = () => {
+
+            if (xhr.readyState == 4) {
+
+                if (xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+                else {
+                    alert(xhr.responseText);
+                }
+            }
+        }
+        xhr.send(JSON.stringify(resetAcountRequest));
+
+    }
+</script>
