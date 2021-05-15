@@ -35,3 +35,9 @@ $ git clone <https://github.com/igorcsaraiva/Desafio.git>
 # O Api inciará na porta:80 - acesse <http://localhost:56504>
 
 ```
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [.Net Core 5](https://dotnet.microsoft.com/download)
+- [Docker](https://docs.docker.com/docker-for-windows/install/)
