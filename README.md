@@ -32,7 +32,7 @@ $ git clone <https://github.com/igorcsaraiva/Desafio.git>
 # Vá para a pasta server
 # \Desafio e execute o comando: docker-compose -f docker-compose.yml up
 
-# O Api inciará na porta:80 - acesse <http://localhost:56504>
+# A Api inciará na porta:80 - acesse <http://localhost:56504>
 
 ```
 ### 🛠 Tecnologias
